@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form </title>
+    <Link rel="stylesheet" href="./registerForm.css" />
+</head>
+
+<body>
+    <form onsubmit=" return validate()" class="parent-container">
+        <div>
+            <h1>Registration Form</h1>
+        </div>
+        <div class="form-field">
+            <input name="userName" id="userName" type="text" placeholder="Enter Name" required />
+        </div>
+        <div class="form-field">
+            <input name="userEmail" id="userEmail" type="email" placeholder="Enter Email" required />
+        </div>
+        <div class="form-field">
+            <input name="userPassword" id="userPassword" type="password" placeholder="Enter Password" required />
+        </div>
+        <div class="form-field">
+            <input name="mobileNumber" id="mobileNumber" type="text" placeholder="Enter mobile number" required />
+        </div>
+        <button>Submit</button>
+    </form>
+    <script>
+        function validate()
+        {
+            var name = document.getElementById("userName").value;
+            var email = document.getElementById("userEmail").value;
+            var password = document.getElementById("userPassword").value;
+            var number = document.getElementById("mobileNumber").value;
+            var nameCheck = /^[a-zA-Z]+[a-zA-Z ]+$/;
+            var emailCheck = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            console.log(name, email, password, number);
+            if(!name.match(nameCheck))
+            {
+                alert("check your name");
+                return false;
+            }
+            if(!email.match(emailCheck))
+            {
+                alert("check your email");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
+
+
